@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class hotelbooking extends Model
 {        protected $table='hotelbooking';
+       public $timestamps=false;
         protected $fillable=['hotel_details_id','user_id','property_address','contact_name','arrival_date','room_type','mobile_phone','email_address','price','arrival_time','status'];
 
     public function getAddRules(){

@@ -202,110 +202,12 @@
                             <div class="col-12">
                                 <div class="ml-auto">
                                     <h3>Hotel Booking</h3>
+                                    <li>
+		                		<a href="{{route('hotelbookingadd')}}" class="ttr-material-button"><span class="ttr-label">Hotel Booking Add</span></a>
+							</li>		
                                 </div>
                             </div>
-                            <div class="form-group col-6">
-                                <label class="col-form-label">Choose Hotel</label>
-                                <div>
-                                <select name="hotel_details_id" class="form-control">
-                                    @if(isset($hotel_details))
-                                    @foreach($hotel_details as $ind_hotel_details)
-                                    <option value="{{@$ind_hotel_details->id}}">{{@$ind_hotel_details->property_name}}</option>
-                                    @endforeach
-                                    @endif
-                                </select>
-                                </div>			
-                            </div>
-
-
-                          <div class="form-group col-6">
-                              <label class="col-form-label">Client(only set if client is registered)</label>
-                            <div>
-                            <select name="user_id" class="form-control">
-                                @if(isset($users))
-                                @foreach($users as $ind_user)
-                                <option value="{{@$ind_user->id}}">{{@$ind_user->name}}</option>
-                                @endforeach
-                                @endif
-                            </select>
                             
-                        </div>	
-                    </div>	
-                            
-                                <div class="form-group col-6">
-                                <label class="col-form-label">Room type</label>
-                                <div>
-                                <select name="room_type" class="form-control">
-                                    <option value="single"@isset($hotelbookings->room_type)@if($hotelbookings->room_type=='single') selected @endif @endisset->Single</option>
-                                    <option value="double"@isset($hotelbookings->room_type)@if($hotelbookings->room_type=='double') selected @endif @endisset->Double</option>
-                                    <option value="triple"@isset($hotelbookings->room_type)@if($hotelbookings->room_type=='triple') selected @endif @endisset->Triple</option>
-                                </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group col-6">
-                            <label class="col-form-label">Contact name</label>
-                                <div>
-                                    <input class="form-control" name="contact_name" type="text" value="{{isset($hotelbookings->contact_name)?$hotelbookings->contact_name:''}}">
-                                </div>
-                                    <!-- <input class="form-control" type="text" value=""> -->
-                                </div>
-
-                                <div class="form-group col-6">
-                            <label class="col-form-label">Mobile phone no</label>
-                                <div>
-                                    <input class="form-control" name="mobile_phone" type="number" value="{{isset($hotelbookings->mobile_phone)?$hotelbookings->mobile_phone:''}}">
-                                </div>
-                                    <!-- <input class="form-control" type="text" value=""> -->
-                                </div>	
-
-                                
-                                
-                            
-                                <div class="form-group col-6">
-                            <label class="col-form-label">Email address</label>
-                                <div>
-                                    <input class="form-control" name="email_address" type="text" value="{{isset($hotelbookings->email_address)?$hotelbookings->email_address:''}}">
-                                </div>
-                                    <!-- <input class="form-control" type="text" value=""> -->
-                                </div>
-                                
-                                <div class="form-group col-6">
-                            <label class="col-form-label"> address</label>
-                                <div>
-                                    <input class="form-control" name="property_address" type="text" value="{{isset($hotelbookings->property_address)?$hotelbookings->property_address:''}}">
-                                </div>
-                                    <!-- <input class="form-control" type="text" value=""> -->
-                                </div>
-                                
-                                
-                                <div class="form-group col-6">
-                            <label class="col-form-label">Price</label>
-                                <div>
-                                    <input class="form-control" name="price" type="number" value="{{isset($hotelbookings->price)?$hotelbookings->price:''}}">
-                                </div>
-</div>
-                                
-<div class="form-group col-6">
-<label class="col-form-label">Arrival time</label>
-<div> 
-<input class="form-control" name="arrival_time" type="time" value="{{isset($hotelbookings->arrival_time)?$hotelbookings->arrival_time:''}}">
-<!-- <input class="form-control" type="text" value=""> -->
-</div>
-</div>
-<div class="form-group col-6">
-<label class="col-form-label">Arrival Date</label>
-<div> 
-<input class="form-control" name="arrival_date" type="date" value="{{isset($hotelbookings->arrival_date)?$hotelbookings->arrival_date:''}}">
-<!-- <input class="form-control" type="text" value=""> -->
-</div>					
-</div>
-<div class="seperator"></div>
-					
-<div class="col-12">
-		<button type="reset" class="btn-secondry add-item m-r5"><i class="fa fa-fw fa-trash"></i>Delete</button>
-		<button type="submit" class="btn">Save</button>
-</div>
                         </div>
                     </form>
                         </div>

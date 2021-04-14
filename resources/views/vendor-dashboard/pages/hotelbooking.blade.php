@@ -25,7 +25,7 @@
 				    <div class="card-courses-full-dec">
 					<div class="card-courses-title">
 						
-						<h6 class =m-b5>Property Name: {{$ind_hotel_bookings->hotel_details->property_name}}</h6>
+						<h6 class =m-b5>Property Name: {{$ind_hotel_bookings->hotel_details_id}}</h6>
 					</div>
 
 					<div class="card-courses-list-bx">

@@ -38,11 +38,24 @@ Route :: get('/travel-guide',function() {
     return view('frontend.pages.travel-guide');
 })->name('travel guide');
 
-
+Route::view('form','master');
+Route::post('submit','UserbookingForm@save');
 
 Route :: get('/blog',function() {
     return view('frontend.pages.blog');
 })->name('blog');
+
+Route:: get('/contact',[
+    'uses' => 'ContactMessageController@create'
+]);
+Route:: post('/contact', [
+    'uses' => 'ContactMessageController@store',
+    'as'=>'contact.store'
+]);
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@mailContactForm');
+
+
 Route :: get('/contact',function() {
     return view('frontend.pages.contact');
 })->name('contact');
@@ -68,6 +81,8 @@ Route :: get('/hotels',function() {
 
 Route::get('/hotels','FrontendControllers\FrontendController@showHotel')->name('hotels');
 Route::get('/front-hotel-detail/{slug}','FrontendControllers\FrontendController@showHotelDetail')->name('hotel_by_detail');
+Route::get('/add','FrontendControllers\FrontenedController@showHotelDetailhotelAddView')->name('hotelbookingadd');
+
 Route::post('/front-post-hotel-booking/{hotel_slug}','FrontendControllers\FrontendController@postHotelBooking')->name('front_post_hotel_booking');
 
 
@@ -345,3 +360,9 @@ Route::domain('admin.'.'localhost')->group(function(){
 
 });
 
+//admin route
+Route::view('/admin/login','admin/login');
+
+Route::view('/admin/post','adminpost');
+Route::view('/admin/post_edit','admin/post_edit');
+Route::view('/admin/post_add','admin/login');
